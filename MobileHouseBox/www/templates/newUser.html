@@ -1,0 +1,44 @@
+<ion-view view-title="Account creation" name="newUser-view">
+	<ion-nav-bar class="bar bar-header bar-positive">
+		<ion-nav-back-button> </ion-nav-back-button>
+	</ion-nav-bar>
+
+	<ion-content class="padding">
+		
+		<h3 style="padding-top: 20px;">Your infos.</h3>
+		<div class="list list-inset">
+			<label class="item item-input">
+				<span class="input-label">Username</span>
+				<input type="text" placeholder="e.g. j_doe" ng-model="data.username"> </input>
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Password</span>
+				<input type="text" placeholder="e.g. MyPassWd456321" ng-model="data.password"> </input>
+			</label>
+		</div>
+
+		<h3 style="padding-top: 20px;">Optional</h3>
+		<div class="list list-inset">
+			<label class="item item-input">
+				<span class="input-label">Full name</span>
+				<input type="text" placeholder="e.g. John DOE" ng-model="data.fullname"> </input>
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Email address</span>
+				<input type="email" placeholder="e.g. John.DOE@mydomain.com" ng-model="data.email"> </input>
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Date of birth</span>
+				<input type="date" placeholder="e.g. 11.03.2016" ng-model="data.birth"> </input>
+			</label>
+		</div>
+		
+		<center>
+			<button class="button icon icon-left ion-person-add button-positive" ng-click="registerUser()">Register!</button>
+		</center>
+		<!--<button class="button icon icon-left ion-android-cancel">Cancel</button>-->
+	</ion-content>
+</ion-view>

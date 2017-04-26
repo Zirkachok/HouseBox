@@ -1,0 +1,33 @@
+<ion-view view-title="History">
+	<ion-nav-bar class="bar bar-header bar-positive"> </ion-nav-bar>
+
+	<ion-content>
+		<style>
+			.history-row
+			{
+				border-bottom: 1px solid #CCC;
+				padding: 2px 4px 2px 4px !important;
+			}
+		</style>
+
+		<div style="margin: 8px;">
+			<div class="row history-row" style="font-weight: bold;">
+				<div class="col col-50"> Period </div>
+				<div class="col col-25">Min.</div>
+				<div class="col col-25">Max.</div>
+			</div>
+			
+			<div class="row history-row" ng-repeat="entry in history" style="background-color: {{ entry.bgCol }}; color: {{ entry.fgCol }}">
+				<div class="col col-50">{{entry.label}}</div>
+				<div class="col col-25">{{entry.min}}</div>
+				<div class="col col-25">{{entry.max}}</div>
+			</div>
+		</div>
+
+		<ion-list ng-show="false">
+			<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="entry in history" type="item-text-wrap">
+				{{entry.label}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

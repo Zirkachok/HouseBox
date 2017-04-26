@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+.subtitle{
+	color : #5B554F;
+    font-family: 'Comic Neue', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.scroll-content{
+	background-color:#F0F7FF;
+}

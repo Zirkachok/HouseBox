@@ -1,0 +1,49 @@
+<ion-view view-title="Liberty mode">
+	<ion-nav-bar class="bar bar-header bar-positive"> </ion-nav-bar>
+	<ion-nav-back-button> </ion-nav-back-button>
+
+	<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+		<!-- Start menu Tab -->
+		<ion-tab title="Activities" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/activity">
+		</ion-tab>
+
+		<!-- Account settings Tab -->
+		<ion-tab title="Settings" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+			<ion-nav-view name="tab-account"></ion-nav-view>
+		</ion-tab>
+
+		<!-- Logout -->
+		<ion-tab title="Log-out" icon-off="ion-log-out" icon-on="ion-log-out" href="#/login"> </ion-tab>
+	</ion-tabs>
+
+
+	<ion-content class="padding">
+
+	<div class="card">
+		<div class="item item-text-wrap">
+			<div class="" style="font-size: 75px; text-align: center; padding: 16px;">
+				{{chronoHour}}:{{chronoMinute}}:{{chronoSeconds}}
+			</div>
+		</div>
+		<div class="item item-divider" style="text-align: center; background-color:{{activityMode.bgcol}}; color:white; font-weight:bold;"
+				ng-click="startLiberty()">
+			<span>{{activityMode.message}}</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="item item-text-wrap">
+			<div class="" style="font-size: 90px; text-align: center; padding: 16px; color: {{ pulseDisplay.pulseFgCol }} ">
+				{{ pulse }}
+			</div>
+		</div>
+	
+		<div class="item item-divider" style="text-align: center; background-color:{{pulseDisplay.bgcol}}; color:{{pulseDisplay.fgcol}}; font-weight: {{ pulseDisplay.weight }}">
+			<span>{{ pulseDisplay.message }}</span>
+		</div>
+	</div>
+
+	<div id="container" style="min-width: 310px; height: 250px; margin: 0 auto"></div>
+
+	</ion-content>
+</ion-view>

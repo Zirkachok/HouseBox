@@ -1,0 +1,47 @@
+<ion-view view-title="Account">
+  <ion-content>
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Your name</span>
+        <input type="text" placeholder="John" ng-model="data.name"></input>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="john@example.com" ng-model="data.email"></input>
+      </label>
+    </div>
+
+
+    <div class="card">
+
+      <div class="item item-divider">
+        Threshold parameters
+      </div>
+      <div class="item item-text-wrap">
+
+        <ion-list>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Low Freq</span>
+            <input type="number" placeholder="Test" ng-model="data.lowFreq"></input>
+          </label>
+
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Max Freq</span>
+            <input type="number" placeholder="Test" ng-model="data.MaxFreq"></input>
+          </label>
+
+        </ion-list>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer bar-balanced">
+    <button class="button button-clear pull-right" ng-click="transitionEditNew()">
+      Save
+      <i class="icon ion-arrow-right-a"></i>
+    </button>
+  </div>
+
+</ion-view>

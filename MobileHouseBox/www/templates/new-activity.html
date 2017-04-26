@@ -1,0 +1,54 @@
+<ion-view view-title="Activity">
+  <ion-content class="padding">
+
+    <div class="list list-inset">>
+      <label class="item item-input">
+        <span class="input-label">Activity Name</span>
+        <input type="text" placeholder="Exercising" ng-model="activity.name">
+      </label>
+    </div>
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Activity Name</span>
+        <input type="text" placeholder="Exercising" ng-model="activity.name">
+      </label>
+
+      <a class="item item-icon-left" ng-click="addActivityPeriod(5)">
+        <i class="icon ion-email"></i>
+        Add 5 minutes of activity
+      </a>
+
+      <a class="item item-icon-left" ng-click="addRestingPeriod(5)">
+        <i class="icon ion-email"></i>
+        Add 5 minutes of rest
+      </a>
+    </div>
+
+    <div class="list list-inset">
+
+      <div class="item" ng-repeat="entry in activity.entries">
+        {{ entry.type == 'act' ? 'Exercice for ' : 'Rest for' }} {{ entry.time }} minutes
+      </div>
+
+    </div>
+  </ion-content>
+
+  <ion-footer-bar align-title="left" class="bar">
+    <div class="buttons">
+      <a class="button" ng-click="save()">
+        <i class="icon ion-plus"></i>
+        Save
+      </a>
+    </div>
+    <h1 class="title"></h1>
+    <div class="buttons">
+      <a class="button" ng-click="remove()">
+        <i class="icon ion-trash-a"></i>
+        Delete
+      </a>
+    </div>
+  </ion-footer-bar>
+
+
+</ion-view>

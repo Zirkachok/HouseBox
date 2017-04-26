@@ -1,0 +1,118 @@
+<ion-view view-title="Activities">
+	<ion-content>
+		<div>
+			<img src="img/slide-0.png" style="width: 100%; padding-left: 0px; margin-left: 0px;" ng-click="libertyMode()"> </img>
+		</div>
+		
+		<div>
+			<img src="img/slide-1.png" style="width: 100%; padding-left: 0px; margin-left: 0px;" ng-click="programMode()"> </img>
+		</div>
+
+		<div>
+			<img src="img/slide-2.png" style="width: 100%; padding-left: 0px; margin-left: 0px;" ng-click="historyMode()"> </img>
+		</div>
+
+	</ion-content>
+</ion-view>
+
+
+<!--
+    <div ng-show="state == 'list' ">
+      <div class="list card">
+        <div ng-repeat="entry in data">
+        <a class="item item-icon-left item-icon-right" ng-click="transitionChrono($index)">
+          <i class="icon ion-android-walk"></i>
+          {{ entry.name }}
+          <i class="icon ion-edit" ng-click="transitionEdit($index, $event)"></i>
+
+        </a>
+        </div>
+      </div>
+    </div>
+    </ion-content>
+
+
+    <div ng-show=" state == 'edit' " class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Activity Name</span>
+        <input type="text" placeholder="Exercising" ng-model="editedActivity.name"></input>
+      </label>
+
+      <a class="item item-icon-left" ng-click="addActivityPeriod(5)">
+        <i class="icon ion-email"></i>
+        Add 5 minutes of activity
+      </a>
+
+      <a class="item item-icon-left" ng-click="addRestingPeriod(5)">
+        <i class="icon ion-email"></i>
+        Add 5 minutes of rest
+      </a>
+    </div>
+
+    <div class="list list-inset" ng-show=" state == 'edit' ">
+
+      <div class="item" ng-repeat="entry in editedActivity.entries">
+        {{ entry.type == 'act' ? 'Exercice for ' : 'Rest for' }} {{ entry.time }} minutes
+      </div>
+
+    </div>
+  </ion-content>
+
+  
+  <ion-content ng-show="state == 'chrono' ">
+
+  <div ng-show="state == 'chrono' ">
+
+    <div class="card" ng-show="state == 'chrono' ">
+        <div class="item item-text-wrap">
+          Activity «{{ data[activeIndex].name }}»
+        </div>
+
+        <div class="item item-text-wrap">
+          <div style="text-align: center;">
+            <button class="button button-positive" ng-click="chronoStart()">
+              {{ chronoActive ? "Stop" : "Start" }} this activity !
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="card" ng-repeat="entry in entries" ng-show="state == 'chrono' ">
+        <div class="item item-divider">
+          {{ entry.type == "act" ? "Exercice for" : "Rest for" }} {{ entry.time }} minutes
+        </div>
+
+
+        <div class="item item-text-wrap">
+          <chrono-time start="entry.start" end="entry.end" value="chrono" chrono-start="chronoStartTime"></chrono-time>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+  <div ng-show="state == 'list' " class="bar bar-footer bar-balanced">
+    <button class="button button-clear pull-right" ng-click="transitionEditNew()">
+      New Activity
+      <i class="icon ion-plus-circled"></i>
+    </button>
+  </div>
+
+  <ion-footer-bar ng-show="state == 'edit' " align-title="left" class="bar">
+    <div class="buttons">
+      <a class="button button-assertive icon-left icon ion-trash-a" ng-click="removeEdited()">
+        Delete
+      </a>
+    </div>
+    <h1 class="title"></h1>
+    <div class="buttons">
+      <a class="button button-positive icon-left ion-plus" ng-click="saveEdited()">
+        Save
+      </a>
+    </div>
+  </ion-footer-bar>
+
+-->
+
+
