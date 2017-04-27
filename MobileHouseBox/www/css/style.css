@@ -7,6 +7,71 @@
     line-height: 1.5;
 }
 
+/*
+Base  : #689f38
+Light : #99d066
+Dark  : #387002
+*/
+
 .scroll-content{
-	background-color:#F0F7FF;
+	background-color: transparent;
+}
+
+.introView h1, .introView button {
+	font-family: 'Jura';
+	font-size: 3em;
+	color: white;
+}
+
+.introView .scroll-content {
+	background-color: #99d066;
+	background-size: 800% 800%;
+}
+
+.bar.bar-housebox {
+	border-color: transparent;
+	background-color: #99d066;
+	/*background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);*/
+	color: #fff;
+}
+
+.bar.bar-housebox .title {
+	color: #fff;
+}
+
+/*.bar.bar-housebox.bar-footer {
+	background-image: linear-gradient(180deg, #0c60ee, #0c60ee 50%, transparent 50%); }
+}*/
+
+.button.button-housebox {
+	/*border-color: transparent;*/
+	background-color: #99d066;
+	color: #fff;
+}
+.button.button-housebox:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.button.button-housebox.active, .button.button-housebox.activated {
+	background-color: #387002;
+}
+.button.button-housebox.button-clear {
+	border-color: transparent;
+	background: none;
+	box-shadow: none;
+	color: #99d066;
+}
+.button.button-housebox.button-icon {
+	border-color: transparent;
+	background: none;
+}
+   .button.button-housebox.button-outline {
+	border-color: #99d066;
+	background: transparent;
+	color: #99d066;
+}
+.button.button-housebox.button-outline.active, .button.button-housebox.button-outline.activated {
+	background-color: #99d066;
+	box-shadow: none;
+	color: #fff; 
 }

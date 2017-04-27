@@ -2,8 +2,8 @@
 Manages user accounts
 -->
 
-<ion-view view-title="Login" name="login-view">
-	<ion-nav-bar class="bar bar-header bar-positive"> </ion-nav-bar>
+<ion-view view-title='{{"login_title" | translate}}' name="login-view">
+	<ion-nav-bar class="bar bar-header bar-housebox"> </ion-nav-bar>
 
 	<ion-content class="padding">
 
@@ -15,7 +15,7 @@ Manages user accounts
 
 
 		<div style="margin-top: 64px; text-align: center;">
-			<h3 style="padding-top: 0px; margin-top: 0px;">Select an account</h3>
+			<h3 style="padding-top: 0px; margin-top: 0px;">{{"select_account" | translate}}</h3>
 		</div>
 
 		<ion-list>
@@ -38,32 +38,9 @@ Manages user accounts
 
 		<div style="padding-top: 30px;">
 			<center>
-				<button class="button icon icon-left ion-person-add button-positive" ng-click="createAccount()">Create an account!</button>
+				<button class="button icon icon-left ion-person-add button-housebox" ng-click="createAccount()">{{"create_account" | translate}}</button>
 			</center>
 		</div>
-
-		<!--
-		<div class="list list-inset">
-			<label class="item item-input">
-				<span class="input-label">Username</span>
-				<input type="text" placeholder="e.g. j_doe" ng-model="data.username"> </input>
-			</label>
-
-			<label class="item item-input">
-				<span class="input-label">Password</span>
-				<input type="password" placeholder="e.g. MyPassWd456321" ng-model="data.password"> </input>
-			</label>
-
-			<ion-checkbox ng-model="data.remember" ng-checked="data.remember">Remember me</ion-checkbox>
-		</div>
-		
-		<button class="button icon icon-left ion-log-in button-calm" ng-click="login()">Login to your account</button>
-		<button class="button icon icon-left ion-person-add button-positive" ng-click="createAccount()">Create a new account!</button>
-	-->
-
-		<!--<button class="button button-block button-calm" ng-click="login()">Login to your account</button>-->
-		<!--<button class="button button-block button-calm" ng-click="createAccount()">Create a new account!</button>-->
-
 
 	</ion-content>
 </ion-view>

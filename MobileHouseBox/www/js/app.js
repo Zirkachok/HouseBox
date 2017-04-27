@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 1st parameter is the name of this angular module example (also set in a <body> attribute in index.html)
 // 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'chart.js'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'chart.js', 'pascalprecht.translate'])
 
 
 .run(function($ionicPlatform) {
@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 })
 
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 	// Ionic uses AngularUI Router which uses the concept of states
 	// Learn more here: https://github.com/angular-ui/ui-router
 	// Set up the various states which the app can be in.
@@ -44,20 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 	.state('newUser', {
 		url: '/newuser',
-		controller: "newUserCtrl",
+		controller: "NewUserCtrl",
 		templateUrl: 'templates/newUser.html'
-	})
-
-	.state('history', {
-		url: '/history',
-		templateUrl: 'templates/history.html',
-		controller: 'HistoryCtrl'
-	})
-
-	.state('liberty', {
-		url: '/liberty',
-		templateUrl: 'templates/libertyMode.html',
-		controller: 'LibertyCtrl'
 	})
 
     // setup an abstract state for the tabs directive
@@ -69,26 +57,55 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 	// Each tab has its own nav history stack:
 
-	.state('tab.activity', {
-		url: '/activity',
+	.state('tab.home', {
+		url: '/home',
 		views: {
-			'tab-activity': {
-				templateUrl: 'templates/tab-activity.html',
-				controller: 'ActivityCtrl'
+			'tab-home': {
+				templateUrl: 'templates/tab-home.html',
+				controller: 'HomeCtrl'
 			}
 		}
 	})
 
-	.state('tab.account', {
-		url: '/account',
+	.state('tab.checklist', {
+		url: '/checklist',
 		views: {
-			'tab-account': {
-				templateUrl: 'templates/tab-account.html',
-				controller: 'SettingsCtrl'
+			'tab-checklist': {
+				templateUrl: 'templates/tab-checklist.html',
+				controller: 'ChecklistCtrl'
+			}
+		}
+	})
+
+	.state('tab.simulator', {
+		url: '/simulator',
+		views: {
+			'tab-simulator': {
+				templateUrl: 'templates/tab-simulator.html',
+				controller: 'SimulatorCtrl'
 			}
 		}
 	});
 
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('/intro');
+
+
+	// i18n
+	$translateProvider.translations('en', {
+		// Login state
+		login_title   : "Login",
+		select_account: "Select an account:",
+		create_account: "Create an account!"
+	});
+
+	$translateProvider.translations('fr', {
+		// Login state
+		login_title   : "Connection",
+		select_account: "Sélectionnez un compte:",
+		create_account: "Créer un compte!",
+	});
+	
+	$translateProvider.preferredLanguage("fr");
+	$translateProvider.fallbackLanguage("en");
 });

@@ -1,0 +1,31 @@
+
+<ion-view view-title="Home">
+	<ion-content>
+
+		<ion-list>
+			<div class="row row-wrap ">
+				<ion-item ng-repeat="item in items" class="col col-50 button button-icon light animated bounceInUp" ng-style="{ 'background-color' : item.color }" on-tap="openItem(item)">
+					<i class="icon {{item.icon}}"></i>
+					<p class="bold">{{ item.title }}</p>
+				</ion-item>
+			</div>
+		</ion-list>
+
+		<!-- <ion-item ng-repeat="mytab in tab">
+			<p class="bold">{{ mytab.url }}</p>
+		</ion-item> -->
+
+		<!-- <div>
+			<img src="img/slide-0.png" style="width: 100%; padding-left: 0px; margin-left: 0px;"> </img>
+		</div>
+		
+		<div>
+			<img src="img/slide-1.png" style="width: 100%; padding-left: 0px; margin-left: 0px;"> </img>
+		</div> -->
+
+		<!-- <div>
+			<img src="img/slide-2.png" style="width: 100%; padding-left: 0px; margin-left: 0px;" ng-click="historyMode()"> </img>
+		</div> -->
+
+	</ion-content>
+</ion-view> 

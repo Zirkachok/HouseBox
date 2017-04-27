@@ -3,9 +3,6 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller("IntroCtrl", function($scope, $state, $timeout)
 {
-	//authService.ClearCredentials();
-	//$scope.data = {};
-
 	console.log("Introduction controller")
 
 	// Stay 5sec showing the logo
@@ -18,68 +15,6 @@ angular.module('starter.controllers', ['starter.services'])
 	{
 		$state.go("login");
 	};
-
-	/*$scope.$on('event:authFailed', function(e, status)
-	{
-		var alertPopup = $ionicPopup.alert(
-		{
-			title: 'Connection to Open-Heart failed',
-			template: 'Are you already registered? If yes, please check your credentials.'
-		});
-	});
-
-	$scope.$on('event:authSucceed', function(e, status)
-	{
-		$state.go('tab.dash');
-	});*/
-	
-	/*
-	$scope.data.remember = true
-
-	$scope.login = function()
-	{
-		if(angular.isUndefined($scope.data.username) || angular.isUndefined($scope.data.password) ||
-			$scope.data.username === '' || $scope.data.password === '')
-		{
-			var alertPopup = $ionicPopup.alert(
-			{
-				title: 'Missing information',
-				template: '<center>Are you already registered? If yes, please fill all your credentials.</center>'
-			});
-		}
-		else
-		{
-			//console.log("Got user=" + $scope.data.username + " and pass=" + $scope.data.password)
-			//console.log("Remember me? " + $scope.data.remember)
-
-			//$state.go('tab.dash');
-			$scope.result = authService.Login($scope.data.username, $scope.data.password, $scope.data.remember);
-			if($scope.result == true)
-			{
-				if($scope.data.remember == true)
-				{
-					//window.localStorage.setItem("username", $scope.data.username);
-					//window.localStorage.setItem("password", $scope.data.password);
-				}
-				
-				$state.go('tab.dash');
-			}
-			else
-			{
-				var alertPopup = $ionicPopup.alert(
-				{
-					title: 'Login failed',
-					template: '<center>Are you already registered? If yes, please check your credentials.</center>'
-				});
-			}
-		}
-	}
-
-	$scope.createAccount = function()
-	{
-		console.log("Create new account!!!")
-		$state.go('newUser');
-	}*/
 })
 
 .controller("LoginCtrl", function($scope, $state, $ionicPopup, usersService)
@@ -117,64 +52,91 @@ angular.module('starter.controllers', ['starter.services'])
 	{
 		console.log("Log with account " + $id)
 		//window.localStorage.setItem("currUser", $id);
-		$state.go('tab.activity');
+		$state.go('tab.home');
 	}
 })
 
-.controller("newUserCtrl", function($scope, $state, $ionicPopup)//, authService)
+.controller("NewUserCtrl", function($scope, $state, $ionicPopup)//, authService)
 {
 	//console.log("New user..." + window.localStorage.getItem("username"))
 
 	$scope.data = {};
 
-	$scope.registerUser = function()
-	{
-		if(angular.isUndefined($scope.data.username) || angular.isUndefined($scope.data.password) ||
-			$scope.data.username === '' || $scope.data.password === '')
-		{
-			var alertPopup = $ionicPopup.alert(
-			{
-				title: 'Missing information',
-				template: '<center>You need to at least fill a username and password</center>'
-			});
-		}
-		else
-		{
-			console.log("New user registered!")
+	// $scope.registerUser = function()
+	// {
+	// 	if(angular.isUndefined($scope.data.username) || angular.isUndefined($scope.data.password) ||
+	// 		$scope.data.username === '' || $scope.data.password === '')
+	// 	{
+	// 		var alertPopup = $ionicPopup.alert(
+	// 		{
+	// 			title: 'Missing information',
+	// 			template: '<center>You need to at least fill a username and password</center>'
+	// 		});
+	// 	}
+	// 	else
+	// 	{
+	// 		console.log("New user registered!")
 
-			//window.localStorage.setItem("username", $scope.data.username);
-			//window.localStorage.setItem("password", $scope.data.password);
+	// 		//window.localStorage.setItem("username", $scope.data.username);
+	// 		//window.localStorage.setItem("password", $scope.data.password);
 
-			var alertPopup = $ionicPopup.alert(
-			{
-				title: 'Welcome to Open-Heart, ' + $scope.data.username + ' !',
-				template: '<center>You are now successfully registered to Open-Heart. Enjoy your journey!</center>'
-			});
+	// 		var alertPopup = $ionicPopup.alert(
+	// 		{
+	// 			title: 'Welcome to Open-Heart, ' + $scope.data.username + ' !',
+	// 			template: '<center>You are now successfully registered to Open-Heart. Enjoy your journey!</center>'
+	// 		});
 			
-			$state.go('tab.activity');
-		}
-	}
+	// 		$state.go('tab.home');
+	// 	}
+	// }
 })
 
-.controller('ActivityCtrl',function($scope, $state)
+
+.controller("HomeCtrl", function($scope, $state)
 {
-	console.log("Activity...")
+	console.log("Home sweet home...")
 
-	$scope.libertyMode = function()
+	$scope.items = [
 	{
-		console.log("Liberty Mode!")
-		$state.go('liberty');
+		color: "#E47500",
+		icon: "ion-android-checkbox-outline",
+		title: "Checklist"
+	},
+	{
+		color: "#5AD863",
+		icon: "ion-pie-graph",
+		title: "Simulator"
+	},
+	{
+		color: "#F8E548",
+		icon: "ion-ios-home",
+		title: "Home"
+	},
+	{
+		color: "#AD5CE9",
+		icon: "ion-android-settings",
+		title: "Settings"
 	}
+	// {
+	// 	color: "#3DBEC9",
+	// 	icon: "ion-social-css3",
+	// 	title: "CSS3"
+	// },
+	// {
+	// 	color: "#D86B67",
+	// 	icon: "ion-social-angular",
+	// 	title: "Angular"
+	// }
+];
+})
 
-	$scope.programMode = function()
-	{
-		console.log("Program Mode!")
-	}
+.controller("SimulatorCtrl", function($scope, $state)
+{
+	console.log("Simulator...")
+})
 
-	$scope.historyMode = function()
-	{
-		console.log("History Mode!")
-		$state.go('history');
-	}
+.controller("ChecklistCtrl", function($scope, $state)
+{
+	console.log("Checklist...")
 });
 ;
