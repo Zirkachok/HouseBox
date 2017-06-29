@@ -100,34 +100,37 @@ angular.module('starter.controllers', ['starter.services'])
 	{
 		color: "#E47500",
 		icon: "ion-android-checkbox-outline",
-		title: "Checklist"
+		title: "Checklist",
+		state: "checklist"
 	},
 	{
 		color: "#5AD863",
 		icon: "ion-pie-graph",
-		title: "Simulator"
+		title: "Simulator",
+		state: "tab.simulator"
 	},
 	{
 		color: "#F8E548",
 		icon: "ion-ios-home",
-		title: "Home"
+		title: "Home",
+		state: "tab.home"
 	},
 	{
 		color: "#AD5CE9",
 		icon: "ion-android-settings",
-		title: "Settings"
+		title: "Settings",
+		state: "tab.home"
 	}
-	// {
-	// 	color: "#3DBEC9",
-	// 	icon: "ion-social-css3",
-	// 	title: "CSS3"
-	// },
-	// {
-	// 	color: "#D86B67",
-	// 	icon: "ion-social-angular",
-	// 	title: "Angular"
-	// }
-];
+	];
+
+	// color: "#3DBEC9", color: "#D86B67"
+
+
+	$scope.openItem = function($item) {
+		console.log("Switch to " + $item.state)
+		$state.go($item.state);
+	};
+
 })
 
 .controller("SimulatorCtrl", function($scope, $state)

@@ -1,0 +1,18 @@
+[default]
+
+usePeriod      = 10
+
+rentMonthly    = 665
+rentCharges    = 65
+rentHousingTax = 900
+
+buyAmount      = 250000
+buyProvision   = 20000
+buyLoanRate    = 1.7
+buyLoanInsu    = 0
+buyPropeTax    = 1000
+buyHousingTax  = 900
+buyLoanLength  = 25
+buyInflation   = 0
+buyNotaryFees  = 8
+buyMaintFees   = 1250
